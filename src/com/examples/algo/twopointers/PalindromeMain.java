@@ -1,7 +1,7 @@
 package com.examples.algo.twopointers;
 public class PalindromeMain {
     public static void main(String[] args) {
-       String s = "12321";
+       String s = "TAKE U FORWARD";
        System.out.println("given string is palindrome:: "+ isPalindrome(s));
     }
     

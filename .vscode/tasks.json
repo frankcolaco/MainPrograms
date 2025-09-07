@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run PalindromeMain",
+			"type": "shell",
+			"command": "javac src/com/examples/algo/twopointers/PalindromeMain.java && java -cp src com.examples.algo.twopointers.PalindromeMain",
+			"problemMatcher": [
+				"$javac"
+			],
+			"group": "build"
+		}
+	]
+}
