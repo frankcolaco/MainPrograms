@@ -139,7 +139,7 @@ public class RecordsMain {
                 new Employee(19, "Quinn Teal", 25, "Female", "Marketing", 2020, 58000.0),
                 new Employee(20, "Rita Lime", 34, "Female", "HR", 2016, 80000.0),
                 new Employee(21, "Sam Navy", 30, "Male", "Sales", 2018, 66000.0),
-                new Employee(22, "Tina Magenta", 28, "Female", "Engineering", 2021, 61000.0));
+                new Employee(22, "Tina Magenta", 28, "Female", "Engineering", 2021, 61000.0),
+        new Employee(22, "Tina Magentai", 28, "Female", "Engineering", 2021, 61000.0));
     }
 }
-record Employee(int id,String name,int age,String gender,String department,int yearOfJoining,double salary) {}
