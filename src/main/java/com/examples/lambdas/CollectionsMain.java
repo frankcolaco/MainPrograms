@@ -86,8 +86,54 @@ public class CollectionsMain {
         fruitPrice = fruits.computeIfPresent("dragon",(k,v)-> v+12);
         System.out.println(fruitPrice);
 
-        fruitPrice = fruits.computeIfPresent("mango",(k,v)->v+1);
-        System.out.println(fruitPrice); // throws NPE
+       // fruitPrice = fruits.computeIfPresent("mango",(k,v)->v+1);
+       // System.out.println(fruitPrice); // throws NPE
+
+        /*
+        replace() replaces entry for a specified key only if it is currently mapped to some value
+         and if key is not present or if the key is present but value is null, then nothing is done.
+         */
+
+        fruits.replace("apple",50);
+        System.out.println("fruits after replace::"+ fruits);
+
+        /*
+        replace() has another flavour which replaces entry for a specified key only if it is currently mapped to specified value
+         */
+        fruits.replace("apple",30,50);
+        System.out.println("fruits after replacing value "+ fruits);
+
+        fruits.replace("apple",50,30);
+        System.out.println("fruits after replacing value with new value "+ fruits);
+
+        /*
+        another replace() is where you can replace all the values with given values
+         */
+        fruits.replaceAll((k,v)-> 50);
+        System.out.println("fruits after replace all: "+fruits);
+
+        /*
+        there is one more method that removes mapping for a key from the map if it is present
+         */
+
+        fruits.remove("dragon");
+        System.out.println("fruits after remove method "+fruits);
+
+        /*
+        one more flavour of remove method is providing key and value both in the params and if value does not match then it does not remove the entry
+         */
+        fruitPrice = fruits.computeIfAbsent("dragon",v-> 10);
+        System.out.println("fruits:: "+fruits);
+        fruits.remove("dragon",20);
+        System.out.println("fruits after removing with remove(k,v) but not removed "+fruits);
+        fruits.remove("dragon",10);
+        System.out.println("fruits after removing with remove(k,v) now removed "+fruits);
+
+        /*
+        iterating over map in java8, easy way
+         */
+
+        fruits.forEach((k,v)-> System.out.println("Key:: "+k + " value:: "+v));
 
     }
 }
