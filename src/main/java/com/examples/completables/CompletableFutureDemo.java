@@ -2,8 +2,6 @@ package com.examples.completables;
 
 import java.util.concurrent.*;
 
-import static java.util.concurrent.Executors.newCachedThreadPool;
-
 public class CompletableFutureDemo {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
