@@ -14,11 +14,13 @@ public class SubArraySumEqKMain {
 
         SubArraySumEqKMain subArraySumEqKMain = new SubArraySumEqKMain();
 
+        //brute force method Time complexity: O(n^2) space complexity: O(n)
         Integer[] numArray = {1,2,3};
         System.out.println("number of subarrays whose sum is equal to 3:: "+subArraySumEqKMain.subarraySum(numArray,3));
         Integer[] numArray1 = {1,1,1};
         System.out.println("number of subarrays whose sum is equal to 3:: "+subArraySumEqKMain.subarraySum(numArray1,2));
 
+        //optimized approach Time complexity: O(n) space complexity: O(n)
         System.out.println("::::: below result is with using hashmap ::::::");
         Integer[] arr = {10, 2, -2, -20, 10};
         int k = -10;
