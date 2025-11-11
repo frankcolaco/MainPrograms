@@ -1,4 +1,4 @@
-package com.examples.algo.prefixsum;
+package com.examples.algo.patterns.prefixsum;
 
 /*
 Given an array of integers greater than zero,

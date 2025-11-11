@@ -1,4 +1,4 @@
-package com.examples.algo.twopointers;
+package com.examples.algo.patterns.twopointers;
 
 /*
 Given an integer array arr[] and an integer ele the task is to the remove all occurrences of ele from arr[] in-place

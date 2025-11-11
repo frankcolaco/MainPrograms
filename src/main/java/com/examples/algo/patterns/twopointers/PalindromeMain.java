@@ -1,4 +1,4 @@
-package com.examples.algo.twopointers;
+package com.examples.algo.patterns.twopointers;
 public class PalindromeMain {
     public static void main(String[] args) {
        String s = "TAKE U FORWARD";

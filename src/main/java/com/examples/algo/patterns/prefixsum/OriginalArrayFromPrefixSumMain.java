@@ -1,4 +1,4 @@
-package com.examples.algo.prefixsum;
+package com.examples.algo.patterns.prefixsum;
 
 import java.util.ArrayList;
 import java.util.List;

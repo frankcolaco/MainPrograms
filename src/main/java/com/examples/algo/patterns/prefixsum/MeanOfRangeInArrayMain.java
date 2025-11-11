@@ -1,4 +1,4 @@
-package com.examples.algo.prefixsum;
+package com.examples.algo.patterns.prefixsum;
 
 /*
 Given an array arr[] of n integers and q queries represented by an array queries[][], where queries[i][0] = l and queries[i][1] = r.

@@ -1,4 +1,4 @@
-package com.examples.algo.prefixsum;
+package com.examples.algo.patterns.prefixsum;
 
 /*
 The equilibrium index of an array is an index such that the sum of all elements at lower indexes equals the sum of all elements at higher indexes.

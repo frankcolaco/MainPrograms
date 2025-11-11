@@ -1,4 +1,4 @@
-package com.examples.algo.twopointers;
+package com.examples.algo.patterns.twopointers;
 
 import java.util.ArrayList;
 
