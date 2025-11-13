@@ -35,12 +35,10 @@ public class BinarySearchRecursive {
             int mid = (low+high)/2;
             if(arr[mid]==key){
                 return mid;
-            }else{
-                if(arr[mid]<key){
+            }else if(arr[mid]<key){
                     high = mid-1;
                     rBinSearch(low,high,key,arr);
                 }else return rBinSearch(mid+1,high,key,arr);
-            }
         }
         return -1;
     }
