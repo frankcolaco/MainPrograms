@@ -1,5 +1,9 @@
 package com.examples.algo.patterns.twopointers;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.ArrayList;
 
 
@@ -19,51 +23,52 @@ public class TwoSumMain {
 
         //optimal method Time complexity: O(n) space complexity: O(1)
         System.out.println("::::::::::::::::::::::::::::::::::::::::::::");
-        result = twoSumOp(arr,target);
-        result.forEach(System.out::println);
+        ArrayList<TwoSumResult> result1 = twoSumOp(arr,target);
+        result1.forEach(System.out::println);
     }
 
-    private static ArrayList<Integer> twoSumOp(int[] arr, int target) {
+    private static ArrayList<TwoSumResult> twoSumOp(int[] arr, int target) {
 
         int left = 0; int right = arr.length-1;
-
+        ArrayList<TwoSumResult> results = new ArrayList<>();
         while(left < right){
             int cSum = arr[left]+arr[right];
             if(cSum == target){
-                ArrayList<Integer> result = new ArrayList<>();
-                result.add(left+1);
-                result.add(right+1);
-                return result;
+                TwoSumResult result = new TwoSumResult();
+                result.setResult(String.valueOf(left+1).concat(", ").concat(String.valueOf(right+1)));
+                results.add(result);
+                left++;
+                right--;
             }else if(cSum<target){
                 left++;
             }else{
                 right--;
             }
         }
-        ArrayList<Integer> result = new ArrayList<>();
-        result.add(-1);
-        result.add(-1);
 
-        return result;
+        return results;
     }
 
     private static ArrayList<Integer> twoSum(int[] arr, int target) {
 
         int n = arr.length;
+        ArrayList<Integer> result = new ArrayList<>();
         for(int i=0;i<n;i++){
             for(int j=i;j<n;j++){
                 int sum = arr[i]+arr[j];
                 if(sum == target){
-                    ArrayList<Integer> result = new ArrayList<>();
                     result.add(i+1);
                     result.add(j+1);
-                    return result;
                 }
             }
         }
-        ArrayList<Integer> result = new ArrayList<>();
-        result.add(-1);
-        result.add(-1);
         return result;
     }
+}
+
+@Getter
+@Setter
+@ToString
+class TwoSumResult{
+    String result;
 }

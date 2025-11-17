@@ -30,9 +30,9 @@ public class MergeSortMain {
 
         if(low < high){
             int mid = (low+high)/2;
-            mergeSort(low,mid,arr);
-            mergeSort(mid+1,high,arr);
-            merge(arr,low,mid,high);
+            mergeSort(low,mid,arr); // Left side sort
+            mergeSort(mid+1,high,arr); // right side sort
+            merge(arr,low,mid,high); // then merge arrays
         }
     }
 
