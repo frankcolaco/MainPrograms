@@ -10,6 +10,9 @@ public class MultiThreadedTokenBucketFilter extends TokenBucketFilter{
         this.MAX_TOKENS=capacity;
     }
 
+    /**
+     * this method is used in factory after object creation to generate daemon threads.
+     */
     void initialize(){
         Thread daemonThread = new Thread(this::daemonThread);
         daemonThread.setDaemon(true);
