@@ -1,4 +1,4 @@
-package com.examples.interview.question.solution;
+package com.examples.interview.question.solution.producerconsumer;
 
 
 public class ProducerConsumerDemo {

@@ -1,4 +1,4 @@
-package com.examples.interview.question.solution;
+package com.examples.interview.question.solution.producerconsumer;
 
 public class ProducerConsumerSemaphoreDemo {
 
@@ -61,9 +61,9 @@ class BlockingQueueWithSemaphore<T>{
 
     T[] array;
 
-    CountingSemaphore semLock = new CountingSemaphore(1,1);
-    CountingSemaphore semProducer;
-    CountingSemaphore semConsumer;
+    CountingSemaphore semLock = new CountingSemaphore(1,1); // mutex
+    CountingSemaphore semProducer; //producer semaphore
+    CountingSemaphore semConsumer; // consumer semaphore
 
     @SuppressWarnings("unchecked")
     public BlockingQueueWithSemaphore(int capacity){
@@ -75,8 +75,8 @@ class BlockingQueueWithSemaphore<T>{
 
     public T dequeue() throws InterruptedException{
         T item = null;
-        semConsumer.acquire();
-        semLock.acquire();
+        semConsumer.acquire(); // takes permit
+        semLock.acquire(); // acquires lock and boiler plate code is executed
 
         if(head==capacity){
             head=0;
@@ -87,16 +87,16 @@ class BlockingQueueWithSemaphore<T>{
         head++;
         size--;
 
-        semLock.release();
-        semProducer.release();
+        semLock.release(); // release lock
+        semProducer.release(); // notify and release permit.
 
         return item;
     }
 
     public void enqueue(T item) throws InterruptedException{
 
-        semProducer.acquire();
-        semLock.acquire();
+        semProducer.acquire(); // takes permit
+        semLock.acquire(); // acquires lock and performs boiler plate code
 
         if(tail == capacity){
             tail=0;
@@ -106,8 +106,8 @@ class BlockingQueueWithSemaphore<T>{
         size++;
         tail++;
 
-        semLock.release();
-        semConsumer.release();
+        semLock.release(); // release lock and notify
+        semConsumer.release(); // release permit
     }
 
 }
