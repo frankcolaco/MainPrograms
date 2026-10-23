@@ -66,6 +66,10 @@ public class DeferredCallbackExecutor {
 
     }
 
+    /**
+     * Represents the class which holds the callback. For simplicity instead of
+     * executing a method, we print a message.
+     */
     static class CallBack{
         long executeAt;
         String message;
