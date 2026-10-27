@@ -19,17 +19,23 @@ public class UnisexBathroom {
     }
 
     void maleUseBathroom(String name) throws InterruptedException{
+        // check if bathroom is used by women
         synchronized (this){
             while(WOMEN.equals(inUseBy)){
                 this.wait();
             }
 
+            //if not then start claiming the bathroom
             empsInBathroom++;
             inUseBy=MEN;
         }
+
+        // take permit and use it
         maxEmps.acquire();
         useBathroom(name);
         maxEmps.release();
+
+        // once used start releasing the bathroom and notify all;
         synchronized (this){
             empsInBathroom--;
             if(empsInBathroom==0) inUseBy=NONE;
