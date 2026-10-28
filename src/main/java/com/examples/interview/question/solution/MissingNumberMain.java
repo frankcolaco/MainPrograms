@@ -9,6 +9,8 @@ public class MissingNumberMain {
         System.out.println(new MissingNumberMain().missingNumber(nums));
         System.out.println("==================");
         new MissingNumberMain().missingNumberAny(nums);
+        System.out.println("==================");
+        new MissingNumberMain().missingNumbersOptimal(nums);
     }
 
     private int missingNumber(int[] nums) {
@@ -44,6 +46,29 @@ public class MissingNumberMain {
         }
         System.out.println("missing numbers: "+ missingNumbers);
 
+
+    }
+
+    private void missingNumbersOptimal(int[] nums){
+        Set<Integer> uniqueNumbers = new HashSet<>();
+
+        if(nums.length ==0) return;
+        int min = nums[0];
+        int max = nums[0];
+
+        for(int num:nums){
+            uniqueNumbers.add(num);
+            if(num < min) min = num;
+            if(num > max) max = num;
+
+        }
+        List<Integer> missingNumbers = new ArrayList<>();
+        for(int i=min;i<=max;i++){
+            if(!uniqueNumbers.contains(i)){
+                missingNumbers.add(i);
+            }
+        }
+        System.out.println("missing numbers: "+missingNumbers);
 
     }
 
