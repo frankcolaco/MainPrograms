@@ -53,7 +53,7 @@ public class UberSeatingProblem {
 
         boolean rideLeader = false;
         lock.lock();
-
+        republicans++;
         if (republicans == 4) {
             // seat all republicans
             repubsWaiting.release(3);
