@@ -1,6 +1,6 @@
 # MainPrograms
 
-A Java-based learning repository containing small, runnable programs that demonstrate core Java concepts, functional programming, streams, concurrency, algorithms, and interview-style concurrency patterns.
+A Java-based learning repository containing small, runnable programs that demonstrate core Java concepts, functional programming, streams, concurrency, algorithms, and interview-style concurrency problems.
 
 This project is organized as a sandbox for experimentation rather than a single application. Most classes are standalone examples with their own `main` method and focus on one concept at a time.
 
@@ -95,6 +95,11 @@ MainPrograms/
                 │           ├── deferredcallback/
                 │           │   ├── DeferredCallBackDemo.java
                 │           │   └── DeferredCallbackExecutor.java
+                │           ├── diningphilosophers/
+                │           │   ├── DiningPhilosopherDemo.java
+                │           │   ├── DiningPhilosophers.java
+                │           │   ├── DiningPhilosophersDemo2.java
+                │           │   └── DiningPhilosophersSol2.java
                 │           ├── producerconsumer/
                 │           │   ├── CountingSemaphore.java
                 │           │   ├── ProducerConsumerDemo.java
@@ -175,6 +180,8 @@ MainPrograms/
 - `ConcurrentModificationExceptionMain`
 - `StampedLockBlockingMain`
 - `StampedLockNonBlockingMain`
+- `DiningPhilosopherDemo`
+- `DiningPhilosophersDemo2`
 
 ### Functional programming
 - `FunctionMain`
@@ -224,6 +231,7 @@ MainPrograms/
 - Busy wait and lock-based solutions
 - Uber seating and unisex bathroom simulations
 - Barrier coordination patterns
+- Dining philosophers deadlock and starvation avoidance demos
 
 ## Prerequisites
 
