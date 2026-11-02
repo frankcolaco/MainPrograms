@@ -1,6 +1,6 @@
 # MainPrograms
 
-A Java-based learning repository containing small, runnable programs that demonstrate core Java concepts, functional programming, streams, concurrency, algorithms, and interview-style concurrency problems.
+A Java-based learning repository containing small, runnable programs that demonstrate core Java concepts, functional programming, streams, concurrency, algorithms, and interview-style synchronization problems.
 
 This project is organized as a sandbox for experimentation rather than a single application. Most classes are standalone examples with their own `main` method and focus on one concept at a time.
 
@@ -15,6 +15,7 @@ The repository now includes examples for:
 - Lambda expressions and comparator-based processing
 - Data structures and algorithmic problem solving
 - Interview-style system design and concurrency challenges
+- Barber shop customer/barber coordination patterns
 - Date/time, optional values, and Java 21 language features
 
 ## Tech Stack
@@ -86,6 +87,8 @@ MainPrograms/
                 ├── interview/
                 │   └── question/
                 │       └── solution/
+                │           ├── BarberShopProblem.java
+                │           ├── BarberShopProblemDemo.java
                 │           ├── BusyWaitSolUsingLockDemo.java
                 │           ├── ListingDedupService.java
                 │           ├── MissingNumberMain.java
@@ -180,6 +183,7 @@ MainPrograms/
 - `ConcurrentModificationExceptionMain`
 - `StampedLockBlockingMain`
 - `StampedLockNonBlockingMain`
+- `BarberShopProblemDemo`
 - `DiningPhilosopherDemo`
 - `DiningPhilosophersDemo2`
 
@@ -229,6 +233,7 @@ MainPrograms/
 - Read/write lock and semaphore patterns
 - Deferred callback and token bucket implementations
 - Busy wait and lock-based solutions
+- Barber shop customer/barber coordination simulation
 - Uber seating and unisex bathroom simulations
 - Barrier coordination patterns
 - Dining philosophers deadlock and starvation avoidance demos
