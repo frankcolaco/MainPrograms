@@ -18,6 +18,22 @@ The repository now includes examples for:
 - Barber shop customer/barber coordination patterns
 - Date/time, optional values, and Java 21 language features
 
+### Latest addition: barber shop synchronization
+
+The newest commit introduces a classic concurrency problem based on a barber shop:
+
+- one barber thread
+- multiple customer threads
+- a fixed number of waiting chairs
+- semaphore-based coordination for arrival, readiness, haircut completion, and chair release
+
+This example is implemented in:
+
+- `com.examples.interview.question.solution.barbershop.BarberShopProblem`
+- `com.examples.interview.question.solution.barbershop.BarberShopProblemDemo`
+
+It demonstrates how to coordinate multiple threads safely using locks and semaphores while avoiding race conditions and invalid chair usage.
+
 ## Tech Stack
 
 - Java 21
