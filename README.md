@@ -1,12 +1,10 @@
 # MainPrograms
 
-A Java-based learning repository containing small, runnable programs that demonstrate core Java concepts, functional programming, streams, concurrency, algorithms, and interview-style synchronization problems.
-
-This project is organized as a sandbox for experimentation rather than a single application. Most classes are standalone examples with their own `main` method and focus on one concept at a time.
+A Java learning repository of small, runnable programs covering core Java, functional programming, streams, concurrency, algorithms, and interview-style problems. It is organized as a sandbox for experimentation rather than a single application; most classes are standalone examples with their own `main` method.
 
 ## Overview
 
-The repository now includes examples for:
+The repository includes examples for:
 
 - Core Java fundamentals and utility patterns
 - Multithreading, synchronization, and race-condition demos
@@ -15,24 +13,16 @@ The repository now includes examples for:
 - Lambda expressions and comparator-based processing
 - Data structures and algorithmic problem solving
 - Interview-style system design and concurrency challenges
-- Barber shop customer/barber coordination patterns
 - Date/time, optional values, and Java 21 language features
 
-### Latest addition: barber shop synchronization
+### Latest addition: singleton patterns and longest substring
 
-The newest commit introduces a classic concurrency problem based on a barber shop:
+The latest commit adds two groups of interview and algorithm examples:
 
-- one barber thread
-- multiple customer threads
-- a fixed number of waiting chairs
-- semaphore-based coordination for arrival, readiness, haircut completion, and chair release
+- A sliding-window/two-pointer solution for finding the length of the longest substring without repeating characters: `com.examples.algo.patterns.twopointers.LongestSubstringMain`.
+- Singleton implementations that compare common initialization and synchronization approaches, including eager initialization, synchronized access, double-checked locking, and the Bill Pugh holder idiom. These are in `com.examples.interview.question.solution.superman`.
 
-This example is implemented in:
-
-- `com.examples.interview.question.solution.barbershop.BarberShopProblem`
-- `com.examples.interview.question.solution.barbershop.BarberShopProblemDemo`
-
-It demonstrates how to coordinate multiple threads safely using locks and semaphores while avoiding race conditions and invalid chair usage.
+Run `LongestSubstringMain` to see the example input (`"abcabcaa"`) and its result. The singleton classes each demonstrate a distinct approach; `SupermanWithFlaws` explicitly documents the unsafe unsynchronized lazy-initialization case.
 
 ## Tech Stack
 
@@ -48,138 +38,46 @@ MainPrograms/
 ├── .gitignore
 ├── README.md
 ├── pom.xml
-└── src/
-    └── main/
-        └── java/
-            └── com/examples/
-                ├── AuthorizationMain.java
-                ├── ConcurrentModificationExceptionMain.java
-                ├── DaemonThreadMain.java
-                ├── DateStringMain.java
-                ├── DeadLockDemo.java
-                ├── ExceptionDescriptionExtraction.java
-                ├── HashMapCollisionMain.java
-                ├── Main.java
-                ├── MissingNumbersMain.java
-                ├── RaceConditionDemo.java
-                ├── VoidMain.java
-                ├── algo/
-                │   ├── patterns/
-                │   │   ├── prefixsum/
-                │   │   │   ├── ArrayToEqSubArrayMain.java
-                │   │   │   ├── EquilibriumMain.java
-                │   │   │   ├── MeanOfRangeInArrayMain.java
-                │   │   │   ├── OriginalArrayFromPrefixSumMain.java
-                │   │   │   ├── RangeSumArrayMain.java
-                │   │   │   └── SubArraySumEqKMain.java
-                │   │   └── twopointers/
-                │   │       ├── PalindromeMain.java
-                │   │       ├── RemoveAllOccurrencesInArrayMain.java
-                │   │       └── TwoSumMain.java
-                │   ├── searching/
-                │   │   ├── BinarySearchIterative.java
-                │   │   └── BinarySearchRecursive.java
-                │   └── sorting/
-                │       ├── HeapSortMain.java
-                │       ├── MergeSortMain.java
-                │       └── QuickSortMain.java
-                ├── binary/
-                │   └── BinaryOpMain.java
-                ├── collectors/
-                │   ├── CollectorsAggregatorOpsMain.java
-                │   ├── CollectorsDemoMain.java
-                │   └── CollectorsGroupingOpsMain.java
-                ├── completables/
-                │   ├── AreaOfRectangleMain.java
-                │   ├── CompletableChainingMain.java
-                │   ├── CompletableCombiningMain.java
-                │   ├── CompletableFutureDemo.java
-                │   └── CompletableProcessingMain.java
-                ├── consumers/
-                │   └── ConsumerMain.java
-                ├── function/
-                │   ├── BiFunctionMain.java
-                │   └── FunctionMain.java
-                ├── interview/
-                │   └── question/
-                │       └── solution/
-                │           ├── BarberShopProblem.java
-                │           ├── BarberShopProblemDemo.java
-                │           ├── BusyWaitSolUsingLockDemo.java
-                │           ├── ListingDedupService.java
-                │           ├── MissingNumberMain.java
-                │           ├── barrier/
-                │           │   ├── Barrier.java
-                │           │   └── BarrierDemo.java
-                │           ├── deferredcallback/
-                │           │   ├── DeferredCallBackDemo.java
-                │           │   └── DeferredCallbackExecutor.java
-                │           ├── diningphilosophers/
-                │           │   ├── DiningPhilosopherDemo.java
-                │           │   ├── DiningPhilosophers.java
-                │           │   ├── DiningPhilosophersDemo2.java
-                │           │   └── DiningPhilosophersSol2.java
-                │           ├── producerconsumer/
-                │           │   ├── CountingSemaphore.java
-                │           │   ├── ProducerConsumerDemo.java
-                │           │   └── ProducerConsumerSemaphoreDemo.java
-                │           ├── readwritelock/
-                │           │   ├── ReadWriteLock.java
-                │           │   └── ReadWriteLockDemo.java
-                │           ├── semaphore/
-                │           │   ├── CountingSemaphore.java
-                │           │   └── CountingSemaphoreDemo.java
-                │           ├── tokenbucket/
-                │           │   ├── MultiThreadedTokenBucketFilterDemo.java
-                │           │   ├── TokenBucketFilterDemo.java
-                │           │   └── factory/
-                │           │       ├── TokenBucketFilter.java
-                │           │       ├── TokenBucketFilterFactory.java
-                │           │       └── TokenBucketMultiThreadedFactoryDemo.java
-                │           ├── uberseatingproblem/
-                │           │   ├── UberSeatingProblem.java
-                │           │   └── UberSeatingProblemDemo.java
-                │           └── unisexbathroom/
-                │               ├── UnisexBathroom.java
-                │               └── UnisexBathroomDemo.java
-                ├── lambdas/
-                │   ├── CollectionsMain.java
-                │   └── comparator/
-                │       ├── Person.java
-                │       ├── PersonMain.java
-                │       ├── PersonService.java
-                │       └── RenewedComparatorMain.java
-                ├── locks/
-                │   ├── StampedLockBlockingMain.java
-                │   └── StampedLockNonBlockingMain.java
-                ├── optional/
-                │   └── OptionalMain.java
-                ├── pojo/
-                │   └── Employee.java
-                ├── predicates/
-                │   ├── BiPredicateMain.java
-                │   └── PredicateMain.java
-                ├── streams/
-                │   ├── Employee.java
-                │   ├── RecordsMain.java
-                │   ├── SecondHighestMain.java
-                │   ├── SlicingMain.java
-                │   ├── StreamsFilterDemo.java
-                │   ├── StreamsFindingOpsMain.java
-                │   ├── StreamsFlatMapDemo.java
-                │   ├── StreamsMapDemo.java
-                │   ├── StreamsMatchingOpsMain.java
-                │   └── StreamsReduceOpMain.java
-                ├── suppliers/
-                │   └── SupplierMain.java
-                ├── time/
-                │   ├── DateDemo.java
-                │   ├── DateTimeDemo.java
-                │   ├── PeriodDurationDemo.java
-                │   ├── TimeDemo.java
-                │   └── ZoneDateTimeDemo.java
-                └── unary/
-                    └── UnaryOpMain.java
+└── src/main/java/com/examples/
+    ├── algo/
+    │   ├── patterns/
+    │   │   ├── prefixsum/
+    │   │   └── twopointers/
+    │   │       ├── LongestSubstringMain.java
+    │   │       ├── PalindromeMain.java
+    │   │       ├── RemoveAllOccurrencesInArrayMain.java
+    │   │       └── TwoSumMain.java
+    │   ├── searching/
+    │   └── sorting/
+    ├── interview/question/solution/
+    │   ├── superman/
+    │   │   ├── BillPughSuperman.java
+    │   │   ├── Superman.java
+    │   │   ├── SupermanCorrectButSlow.java
+    │   │   ├── SupermanNaiveButCorrect.java
+    │   │   ├── SupermanSlightlyBetter.java
+    │   │   └── SupermanWithFlaws.java
+    │   ├── barrier/
+    │   ├── deferredcallback/
+    │   ├── diningphilosophers/
+    │   ├── producerconsumer/
+    │   ├── readwritelock/
+    │   ├── semaphore/
+    │   ├── tokenbucket/
+    │   ├── uberseatingproblem/
+    │   └── unisexbathroom/
+    ├── collectors/
+    ├── completables/
+    ├── consumers/
+    ├── function/
+    ├── lambdas/
+    ├── locks/
+    ├── optional/
+    ├── predicates/
+    ├── streams/
+    ├── suppliers/
+    ├── time/
+    └── unary/
 ```
 
 ## Example Topics Included
@@ -202,6 +100,7 @@ MainPrograms/
 - `BarberShopProblemDemo`
 - `DiningPhilosopherDemo`
 - `DiningPhilosophersDemo2`
+- Singleton initialization examples in `com.examples.interview.question.solution.superman`
 
 ### Functional programming
 - `FunctionMain`
@@ -240,7 +139,7 @@ MainPrograms/
 
 ### Algorithms and problem patterns
 - Prefix sum strategies
-- Two-pointer techniques
+- Two-pointer techniques, including `LongestSubstringMain`
 - Binary search implementations
 - Merge sort, quick sort, and heap sort
 
@@ -253,6 +152,7 @@ MainPrograms/
 - Uber seating and unisex bathroom simulations
 - Barrier coordination patterns
 - Dining philosophers deadlock and starvation avoidance demos
+- Singleton implementation and thread-safety comparisons
 
 ## Prerequisites
 
@@ -273,10 +173,10 @@ mvn clean compile
 Each example class can generally be run individually if it contains a `main` method. For example:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.examples.VoidMain"
+mvn exec:java -Dexec.mainClass="com.examples.algo.patterns.twopointers.LongestSubstringMain"
 ```
 
-If `exec-maven-plugin` is not configured, you can run the class directly from the IDE or compile it and execute the generated class file with `java`.
+If `exec-maven-plugin` is not configured, run the class directly from the IDE or compile it and execute the generated class file with `java`.
 
 ## Notes
 
