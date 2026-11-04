@@ -15,14 +15,14 @@ The repository includes examples for:
 - Interview-style system design and concurrency challenges
 - Date/time, optional values, and Java 21 language features
 
-### Latest addition: singleton patterns and longest substring
+### Latest addition: multithreaded merge sort
 
-The latest commit adds two groups of interview and algorithm examples:
+The latest commit adds two merge-sort learning examples under `com.examples.algo.sorting`:
 
-- A sliding-window/two-pointer solution for finding the length of the longest substring without repeating characters: `com.examples.algo.patterns.twopointers.LongestSubstringMain`.
-- Singleton implementations that compare common initialization and synchronization approaches, including eager initialization, synchronized access, double-checked locking, and the Bill Pugh holder idiom. These are in `com.examples.interview.question.solution.superman`.
+- `SingleThreadedMergeSort` demonstrates the standard recursive divide-and-conquer merge sort on a sample array.
+- `MultiThreadedMergeSortDemo` generates a random array, sorts each half in a separate thread, and prints the before/after arrays and elapsed time.
 
-Run `LongestSubstringMain` to see the example input (`"abcabcaa"`) and its result. The singleton classes each demonstrate a distinct approach; `SupermanWithFlaws` explicitly documents the unsafe unsynchronized lazy-initialization case.
+These examples are intended for learning and experimentation; the multithreaded version is a concurrency demonstration rather than a production-grade performance optimization.
 
 ## Tech Stack
 
