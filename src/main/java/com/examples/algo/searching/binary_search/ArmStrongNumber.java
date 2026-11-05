@@ -1,4 +1,4 @@
-package com.examples.algo.searching;
+package com.examples.algo.searching.binary_search;
 
 /*
  * The k-digit number N is an Armstrong number if and

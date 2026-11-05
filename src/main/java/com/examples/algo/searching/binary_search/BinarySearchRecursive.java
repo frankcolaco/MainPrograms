@@ -1,4 +1,4 @@
-package com.examples.algo.searching;
+package com.examples.algo.searching.binary_search;
 
 public class BinarySearchRecursive {
 
