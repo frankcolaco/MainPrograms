@@ -1,5 +1,8 @@
 package com.examples.interview.question.solution.orderprinting;
 
+/**
+ * this solution is a classic wait and notify solution for printing in sync.
+ */
 public class OrderPrinting {
 
     private int count;
