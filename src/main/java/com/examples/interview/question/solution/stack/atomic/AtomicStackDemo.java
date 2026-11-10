@@ -11,9 +11,6 @@ public class AtomicStackDemo {
         int numOfThreads = 2;
         CyclicBarrier cyclicBarrier = new CyclicBarrier(numOfThreads);
 
-        long start = System.currentTimeMillis();
-        Integer testValue = 51;
-
         try{
 
             for(int i =0;i<numOfThreads;i++){
@@ -29,7 +26,7 @@ public class AtomicStackDemo {
                     }
 
                     for (int k = 0; k < 10000; k++) {
-                        stack.pop();
+                        System.out.println("poping out:: "+ stack.pop());
                     }
                 });
             }

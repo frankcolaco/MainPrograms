@@ -9,7 +9,6 @@ public class SynchronizedStackDemo {
         ExecutorService executorService = Executors.newFixedThreadPool(20);
         int numOfThreads = 2;
         CyclicBarrier barrier = new CyclicBarrier(numOfThreads);
-        Integer testValue = 51;
 
         try{
             for(int i=0;i<numOfThreads;i++){
