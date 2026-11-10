@@ -47,15 +47,6 @@ public class DiningPhilosopherDemo {
 
         philosophers.add(p4);
 
-        Thread p5 = new Thread(() -> {
-            try {
-                startPhilosopher(diningPhilosophers, 4);
-            } catch (InterruptedException e) {
-                System.out.println("problem ");
-            }
-        },"Philosopher_4");
-        philosophers.add(p5);
-
         for (Thread t : philosophers) {
             t.start();
 

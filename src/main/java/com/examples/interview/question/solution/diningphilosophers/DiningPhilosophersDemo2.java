@@ -10,7 +10,7 @@ public class DiningPhilosophersDemo2 {
         Set<Thread> philosophers = new HashSet<>();
         Thread p1 = new Thread(() -> {
             try {
-                startPhilosopher(diningPhilosophers, 0);
+                startPhilosopher(diningPhilosophers, 1);
             } catch (InterruptedException e) {
                 System.out.println("problem ");
             }
@@ -19,7 +19,7 @@ public class DiningPhilosophersDemo2 {
 
         Thread p2 = new Thread(() -> {
             try {
-                startPhilosopher(diningPhilosophers, 1);
+                startPhilosopher(diningPhilosophers, 2);
             } catch (InterruptedException e) {
                 System.out.println("problem ");
             }
@@ -28,7 +28,7 @@ public class DiningPhilosophersDemo2 {
 
         Thread p3 = new Thread(() -> {
             try {
-                startPhilosopher(diningPhilosophers, 2);
+                startPhilosopher(diningPhilosophers, 3);
             } catch (InterruptedException e) {
                 System.out.println("problem ");
             }
@@ -38,22 +38,13 @@ public class DiningPhilosophersDemo2 {
 
         Thread p4 = new Thread(() -> {
             try {
-                startPhilosopher(diningPhilosophers, 3);
+                startPhilosopher(diningPhilosophers, 4);
             } catch (InterruptedException e) {
                 System.out.println("problem ");
             }
         }, "Philosopher_3");
 
         philosophers.add(p4);
-
-        Thread p5 = new Thread(() -> {
-            try {
-                startPhilosopher(diningPhilosophers, 4);
-            } catch (InterruptedException e) {
-                System.out.println("problem ");
-            }
-        }, "Philosopher_4");
-        philosophers.add(p5);
 
         for (Thread t : philosophers) {
             t.start();
