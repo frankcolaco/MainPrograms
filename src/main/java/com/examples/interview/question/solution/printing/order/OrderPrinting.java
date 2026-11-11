@@ -1,4 +1,4 @@
-package com.examples.interview.question.solution.orderprinting;
+package com.examples.interview.question.solution.printing.order;
 
 /**
  * this solution is a classic wait and notify solution for printing in sync.
