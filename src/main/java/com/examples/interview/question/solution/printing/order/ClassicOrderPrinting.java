@@ -1,4 +1,4 @@
-package com.examples.interview.question.solution.orderprinting;
+package com.examples.interview.question.solution.printing.order;
 
 public class ClassicOrderPrinting {
     public static void main(String[] args) {
