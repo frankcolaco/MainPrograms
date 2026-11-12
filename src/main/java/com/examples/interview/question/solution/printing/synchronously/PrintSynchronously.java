@@ -1,4 +1,4 @@
-package com.examples.interview.question.solution.print.synchronously;
+package com.examples.interview.question.solution.printing.synchronously;
 
 public class PrintSynchronously {
 
