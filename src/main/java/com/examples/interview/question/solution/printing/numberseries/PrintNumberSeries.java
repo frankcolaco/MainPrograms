@@ -27,9 +27,9 @@ public class PrintNumberSeries {
                     evenSem.release();
                     break;
                 }
-                System.out.printf("%02d ",current);
+                System.out.printf("odd %02d ",current);
                 current++;
-                oddSem.release();
+                evenSem.release();
             }catch (Exception e){}
         }
     }
@@ -43,9 +43,9 @@ public class PrintNumberSeries {
                     break;
                 }
 
-                System.out.printf("%02d ",current);
+                System.out.printf("even %02d ",current);
                 current++;
-                evenSem.release();
+                oddSem.release();
             } catch (Exception e) {
 
             }

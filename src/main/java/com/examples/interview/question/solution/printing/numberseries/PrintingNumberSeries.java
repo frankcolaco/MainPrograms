@@ -16,9 +16,8 @@ public class PrintingNumberSeries {
 
     public void printZero() throws InterruptedException {
 
-        for (int i = 0; i < n; ++i) {
+        for (int i = 1; i <= n; i++) {
             zeroSem.acquire();
-            System.out.println("0");
             (i % 2 == 0 ? evenSem : oddSem).release();
         }
 
@@ -27,16 +26,16 @@ public class PrintingNumberSeries {
     public void printOdd() throws InterruptedException {
         for (int i = 1; i <= n; i += 2) {
             oddSem.acquire();
-            System.out.println(i);
+            System.out.printf("odd %02d ",i);
             zeroSem.release();
         }
     }
 
     public void printEven() throws InterruptedException {
 
-        for (int i = 0; i <= n; i += 2) {
+        for (int i = 2; i <= n; i += 2) {
             evenSem.acquire();
-            System.out.println(i);
+            System.out.printf("even %02d ",i);
             zeroSem.release();
         }
     }
