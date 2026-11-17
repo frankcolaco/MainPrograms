@@ -1,6 +1,4 @@
-package com.examples;
-
-import com.examples.interview.question.solution.asynctosync.Executor;
+package com.examples.java.utils;
 
 import java.util.Random;
 import java.util.concurrent.*;

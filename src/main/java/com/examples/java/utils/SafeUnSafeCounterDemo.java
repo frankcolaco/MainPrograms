@@ -1,4 +1,4 @@
-package com.examples;
+package com.examples.java.utils;
 
 /**
  * this class demonstrates the safe and unsafe counter using threadlocal keyword
