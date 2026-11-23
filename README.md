@@ -30,6 +30,12 @@ The interview printing examples now also include a synchronized multithreaded Fi
 
 The synchronous printing classes use the corrected `printing.synchronously` package and directory (rather than the former `print.synchronously` path).
 
+Recent lock examples cover several concurrency mechanisms:
+
+- Reentrant locks: `ReentrantLockDemo`, `ReadWriteReentrantLockDemo`, and `ReadWriteReentrantLockWithRefreshDemo` demonstrate lock ownership, try-lock behavior, read/write synchronization, cache refresh, and lock downgrading.
+- Stamped locks: `OptimisticReadStampedLockDemo`, `ReadStampedLockDemo`, and `WriteStampedLockDemo` demonstrate optimistic reads, read locking, and write locking.
+- FIFO locking: `FifoLock`, `FifoLockDemo`, and `FifoLockWithBlockerDemo` demonstrate queue-based lock acquisition order and `LockSupport` parking/blocker behavior.
+
 ## Tech Stack
 
 - Java 21
@@ -39,7 +45,7 @@ The synchronous printing classes use the corrected `printing.synchronously` pack
 
 ## Repository Structure
 
-This tree reflects the repository's current `main` branch layout, including the latest printing examples and the corrected `printing/synchronously` package path.
+This tree reflects the repository's current `feature/ongoing_learnings` branch layout, including lock and printing examples.
 
 ```text
 MainPrograms/
@@ -124,6 +130,10 @@ MainPrograms/
     │   │   ├── DiningPhilosophers.java
     │   │   ├── DiningPhilosophersDemo2.java
     │   │   └── DiningPhilosophersSol2.java
+    │   ├── fifolock/
+    │   │   ├── FifoLock.java
+    │   │   ├── FifoLockDemo.java
+    │   │   └── FifoLockWithBlockerDemo.java
     │   ├── molecule/
     │   │   ├── H2OMachine.java
     │   │   ├── H2OMachineThread.java
@@ -189,6 +199,15 @@ MainPrograms/
     │   └── unisexbathroom/
     │       ├── UnisexBathroom.java
     │       └── UnisexBathroomDemo.java
+    ├── java/utils/locks/
+    │   ├── reentrant/
+    │   │   ├── ReadWriteReentrantLockDemo.java
+    │   │   ├── ReadWriteReentrantLockWithRefreshDemo.java
+    │   │   └── ReentrantLockDemo.java
+    │   └── stamped/
+    │       ├── OptimisticReadStampedLockDemo.java
+    │       ├── ReadStampedLockDemo.java
+    │       └── WriteStampedLockDemo.java
     ├── lambdas/
     │   ├── CollectionsMain.java
     │   └── comparator/
@@ -246,6 +265,9 @@ MainPrograms/
 - `DiningPhilosopherDemo`
 - `DiningPhilosophersDemo2`
 - Multithreaded FizzBuzz and ordered printing examples
+- FIFO lock ordering with `LockSupport` in `com.examples.interview.question.solution.fifolock`
+- Reentrant lock examples in `com.examples.java.utils.locks.reentrant`
+- Stamped lock examples in `com.examples.java.utils.locks.stamped`
 - Singleton initialization examples in `com.examples.interview.question.solution.superman`
 
 ### Functional programming
@@ -294,6 +316,7 @@ MainPrograms/
 - Read/write lock and semaphore patterns
 - Deferred callback and token bucket implementations
 - Busy wait and lock-based solutions
+- FIFO locking and lock ordering
 - Barber shop customer/barber coordination simulation
 - Uber seating and unisex bathroom simulations
 - Barrier coordination patterns
